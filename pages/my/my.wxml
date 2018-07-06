@@ -1,0 +1,3 @@
+<image mode="widthFix" src="{{src}}"></image>
+<open-data type="userAvatarUrl"></open-data>
+<button bindtap="getLocalImage"> 拍照/上传</button>

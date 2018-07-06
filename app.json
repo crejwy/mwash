@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",   
+    "pages/order/order",
+    "pages/my/my",
+    "pages/product/product"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#4b8675",
+    "navigationBarTitleText": "我的小程序",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/ico-home.png",
+        "selectedIconPath": "images/ico-home-d.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "images/ico-order.png",
+        "selectedIconPath": "images/ico-order-d.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/ico-my.png",
+        "selectedIconPath": "images/ico-my-d.png"
+      }
+    ],
+    "position": "bottom",
+    "backgroundColor": "white",
+    "color": "black",
+    "selectedColor": "red"
+  },
+  "debug": true
+}
