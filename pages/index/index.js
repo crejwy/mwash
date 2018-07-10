@@ -1,14 +1,16 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+var basedata= require("../data.js")
 Page({
   data: {
     search: {
       searchValue: '',
       showClearBtn: false
     },
-    searchResult: []
+    searchResult: [],
+    products: basedata.getProduct(),
+    destinations:basedata.getDestinations()
   },
   //输入内容时
   searchActiveChangeinput: function (e) {
@@ -46,7 +48,8 @@ Page({
       that.setData({
         searchResult: [{
           id:new Date().getTime,
-          team_id: new Date().getTime,                team_avator:'https://bravetest.oss-cn-beijing.aliyuncs.com/IMG_20160528_140200.jpg?x-oss-process=style/style1&Expires=1531183236&OSSAccessKeyId=TMP.AQFemAjL411dshelUidE6O0L-rJyheI_h6Qs3fKCjZxVB_dP_Z6Kj_W6O6qUADAtAhQA7RYX5kpamDrSVw1jjMaF-n80RgIVAKmvngLlO1vN0dWnpZ_OuIZsWhjk&Signature=kNSdw%2B0Iuff6To6Vwoy9VkOin7w%3D',
+          team_id: new Date().getTime,                
+          team_avator:'https://bravetest.oss-cn-beijing.aliyuncs.com/IMG_20160528_140200.jpg?x-oss-process=style/style1&Expires=1531216825&OSSAccessKeyId=TMP.AQEXkWn5_8qOF742B4cdHGcSCJSYXEQu4x0GYyFzImMHK6knL3svMY_UJvZ1AAAwLAIUFjlO4eqhWFaeTuLFXxabNHRs-w8CFD6JWV9SJPEL_EUne67FlNv2w8lc&Signature=HzcQncoJbL76esXM7AUQokqakHQ%3D',
           team_name:'94',
           team_intr:'94是个都比'
         }],
@@ -83,7 +86,12 @@ Page({
       // })
     }
   },
-
+  viewProduct: function (event){
+    var productid = event.target.dataset.productid
+    wx.navigateTo({
+      url: '/pages/product/product?productid=' + productid,
+    })
+  },
   onReady: function () {
 
   },

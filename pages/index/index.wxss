@@ -9,6 +9,21 @@ page{
   padding-left: 5rpx 5rpx 5rpx 20rpx; 
   border-radius: 10rpx;
 }
+.btn_reset{
+  background:none;
+  position:absolute;
+  border:none;
+  right:0;
+  top:0;
+  bottom:0;
+  width:80rpx;
+}
+.icon_clear{
+  position:absolute;
+  right:15rpx;
+  top:10rpx;
+  z-index:3;
+}
 .search__input{
   margin-left: 40rpx;
 }
@@ -17,6 +32,59 @@ page{
   top:0;
   left: 5rpx;
 }
+/* .search-panel{
+  position: absolute;
+  z-index: 2;
+} */
+.search-item{
+  margin: 20rpx;
+  border-bottom: solid 1rpx gray;
+  padding: 10rpx;  
+}
+
+.homepage-swiper{
+    box-sizing: border-box;
+    padding: 0 80rpx;
+    display: block;
+    background: gray;
+}
+.swiper{
+  display:block;
+  height:300rpx;
+}
+
+
+/*地区选择  */
+.view_destination{
+  padding: 10rpx 0;
+}
+.view_destination button{
+  padding-left: 0;
+  padding-right: 0;
+  display:inline-block;
+  background: inherit;
+  line-height: 60rpx;
+  border-radius:0; 
+  text-align: left;
+}
+.view_destination .txt_area{
+  width: 160rpx;
+  border: solid 1rpx gray;
+  padding-left: 20rpx;
+}
+
+.view_destination .txt_country{ 
+  width: 120rpx;
+  cursor: pointer;  
+  margin: 0 20rpx; 
+}
+
+/*热门签证  */
+.signs_header{
+  line-height: 100rpx;
+  color: gray;
+}
+
 .person__top__wrapper{
     width:100%;
     box-sizing:border-box;

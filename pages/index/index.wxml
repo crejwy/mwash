@@ -6,29 +6,53 @@
     <view class="search__icon search__active" style="width:40rpx;">
       <icon type="search" size="13" color="red" ></icon>
     </view>
-    <button wx:if="{{search.showClearBtn}}" catchtap="searchActiveChangeclear" form-type="reset" style="background:none;position:absolute;border:none;right:0;top:0;bottom:0;width:80rpx;">
-      <icon type="clear" size="19" color="#aaa" style="position:absolute;right:15rpx;top:10rpx;z-index:3;"></icon>
+    <button class='btn_reset' wx:if="{{search.showClearBtn}}" catchtap="searchActiveChangeclear" form-type="reset">
+      <icon type="clear" class="icon_clear" size="19" color="#aaa"></icon>
     </button>
   </form>
 </view>
 <!--动态显示搜索输入 -->
-<view class="panel" wx:if="{{search.showClearBtn}}" catchtap="searchSubmit">
-  <view class="panel__bd">
-    <view class="media-box media-box_small-appmsg">
-      <view class="cells">
-        <view class="a cell cell_access">
-          <view class="cell__hd" style="background-color:#1AAD19;border-radius:7rpx;width:80rpx;height:80rpx;line-height:80rpx;text-align:center;">
-            <icon type="search" size="24" color="#fff" style="margin-top:20rpx;"></icon>
-          </view>
-          <view class="cell__bd cell_primary">
-            <view class="p" style="padding-left:20rpx;font-size:34rpx;"><text style="color:#000;">搜索:</text><text style="color:#1AAD19;margin-left:20rpx;">{{search.searchValue}}</text></view>
-          </view>
-          <text class="cell__ft"></text>
-        </view>
-      </view>
-    </view>
+<view class="search-panel" wx:if="{{search.showClearBtn}}" catchtap="searchSubmit">
+  <view class='search-item'>
+      <text>搜索:</text>
+      <text class="search-value">"{{search.searchValue}}"</text>
   </view>
 </view>
+<!--国家与地区swiper  -->
+<view class='homepage-swiper'>
+  <swiper class='swiper' indicator-dots="false"
+  autoplay="true" interval="5000" duration="1000">
+  <block wx:for="{{products}}" wx:key="productid">
+    <swiper-item>
+      <image src="{{item.imgurl}}" data-productid="{{item.productid}}" class="slide-image" />
+    </swiper-item>
+  </block>
+  </swiper>
+</view>
+<!--可选地区与国家  -->
+<block>
+<view class='view_destination' wx:for="{{destinations}}" wx:for-item="itemarea" wx:key="area">
+<button class='txt_area'>{{itemarea.area}}</button>
+<button class='txt_country' wx:for="{{itemarea.country}}" wx:for-item="country" wx:key="name">
+{{country.name}}
+</button>
+</view>
+</block>
+
+<!--热门签证  -->
+<text class='signs_header'>热门签证</text>
+<!--热门签证swiper  -->
+<view class='homepage-swiper'>
+  <swiper class='swiper' indicator-dots="false"
+  autoplay="true" interval="5000" duration="1000">
+  <block wx:for="{{products}}" wx:key="productid">
+    <swiper-item>
+      <image src="{{item.imgurl}}" data-productid="{{item.productid}}"  bind:tap="viewProduct" class="slide-image" />
+    </swiper-item>
+  </block>
+  </swiper>
+</view>
+
 <!--搜索结果  -->
 <block wx:for="{{searchResult}}" wx:for-item="item" wx:key="id" >
 <navigator url="info?teamId={{item.team_id}}">

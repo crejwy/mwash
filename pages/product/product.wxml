@@ -1,4 +1,9 @@
+<view>
+<text>公告：</text>
+xxx
+</view>
+
 <view class="container">
 
-  
+  {{productid}}
 </view>
