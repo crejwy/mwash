@@ -1,0 +1,17 @@
+<!--components/marquee/marquee.wxml wx:if="{{_cohesion}}"  wx:else="{{_cohesion}}"-->
+<view class="example" wx:if="{{_cohesion}}">
+  <view class="marquee_box">
+    <view class="marquee_text" style="{{orientation}}:{{marqueeDistance2}}px;font-size: {{size}}px;">
+      <text>{{text}}</text>
+      <text wx:if="{{marquee2copy_status}}" style="margin-left:{{marquee2_margin}}px;">{{text}}</text>
+    </view>
+  </view>
+</view>
+<view class="example" wx:else>
+  <view class="marquee_box">
+    <view class="marquee_text" style="{{orientation}}:{{marqueeDistance}}px;font-size: {{size}}px;">
+      {{text}}
+    </view>
+  </view>
+</view>
+

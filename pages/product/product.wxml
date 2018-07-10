@@ -1,8 +1,9 @@
-<view>
-<text>公告：</text>
-xxx
+<view class="notice">
+  <view class='notice-title'>公告：</view>
+  <view class="notice-content">
+    <marquee text="这是一个走马灯显示器，，哈哈哈哈哈哈哈哈" orientation='left' ></marquee> 
+  </view>
 </view>
-
 <view class="container">
 
   {{productid}}

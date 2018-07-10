@@ -1,0 +1,18 @@
+.notice{
+  height: 50rpx;
+  overflow: hidden;
+
+}
+.notice-title{
+  display: block;
+  font-size: 14px;
+  width: 100rpx; 
+  height: 100%; 
+  float: left;
+}
+.notice-content{
+  display: inline-block;
+  width: 400rpx; 
+  height: 100%; 
+
+}
