@@ -34,7 +34,7 @@ App({
     })
   },
   globalData: {
-    url:"localhost",
+    api_url:"localhost",//远程服务器地址
     userInfo: null,
     example:1
   }

@@ -4,49 +4,86 @@ const app = getApp()
 
 Page({
   data: {
+    search: {
+      searchValue: '',
+      showClearBtn: false
+    },
+    searchResult: []
+  },
+  //输入内容时
+  searchActiveChangeinput: function (e) {
+    const val = e.detail.value;
+    this.setData({
+      'search.showClearBtn': val != '' ? true : false,
+      'search.searchValue': val
+    })
+  },
+  //点击清除搜索内容
+  searchActiveChangeclear: function (e) {
+    this.setData({
+      'search.showClearBtn': false,
+      'search.searchValue': ''
+    })
+  },
+  //点击聚集时
+  focusSearch: function () {
+    if (this.data.search.searchValue) {
+      this.setData({
+        'search.showClearBtn': true
+      })
+    }
+  },
+  //搜索提交
+  searchSubmit: function () {
+    const val = this.data.search.searchValue;
+    if (val) {
+      const that = this,
+        app = getApp();
+      wx.showToast({
+        title: '搜索中',
+        icon: 'loading'
+      });
+      that.setData({
+        searchResult: [{
+          id:new Date().getTime,
+          team_id: new Date().getTime,                team_avator:'https://bravetest.oss-cn-beijing.aliyuncs.com/IMG_20160528_140200.jpg?x-oss-process=style/style1&Expires=1531183236&OSSAccessKeyId=TMP.AQFemAjL411dshelUidE6O0L-rJyheI_h6Qs3fKCjZxVB_dP_Z6Kj_W6O6qUADAtAhQA7RYX5kpamDrSVw1jjMaF-n80RgIVAKmvngLlO1vN0dWnpZ_OuIZsWhjk&Signature=kNSdw%2B0Iuff6To6Vwoy9VkOin7w%3D',
+          team_name:'94',
+          team_intr:'94是个都比'
+        }],
+        'search.showClearBtn': false,
+      })
+      wx.hideToast();
+      // wx.request({
+      //   url: app.globalData.api_url + 'searchTeam',
+      //   data: {
+      //     keywords: val,
+      //     user_id: app.globalData.myInfo.user_id
+      //   },
+      //   method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      //   // header: {}, // 设置请求的 header
+      //   success: function (res) {
+      //     // success
+      //     let searchResult = res.data.data;
+      //     const len = searchResult.length;
+      //     for (let i = 0; i < len; i++) {
+      //       searchResult[i]['team_avator'] = app.globalData.STATIC_SOURCE + searchResult[i]['team_avator'];
+      //     }
+      //     that.setData({
+      //       searchResult: searchResult,
+      //       'search.showClearBtn': false,
+      //     })
+      //   },
+      //   fail: function () {
+      //     // fail
+      //   },
+      //   complete: function () {
+      //     // complete
+      //     wx.hideToast();
+      //   }
+      // })
+    }
+  },
 
-  },
-  takePhoto() {
-    const ctx = wx.createCameraContext()
-    ctx.takePhoto({
-      quality: 'high',
-      success: (res) => {
-        this.setData({
-          src: res.tempImagePath
-        })
-      }
-    })
-  },
-  error(e) {
-    console.log(e.detail)
-  },
-  loginSuccess: function (e) {
-    console.log(e.detail.code) // wx.login 的 code
-    console.log(e.detail.userInfo) // wx.getUserInfo 的 userInfo
-  },
-  onTabItemTap(item) {
-    // console.log(item.index)
-    // console.log(item.pagePath)
-    // console.log(item.text)
-  },
-  //事件处理函数
-  bindViewTap: function () {
-    //跳转应用【外】某个界面,保留当前页面
-    wx.navigateTo({
-      url: '../product/product'
-    })
-    //跳转应用【外】某个界面，关闭当前页面
-    // wx.redirectTo({
-    //   url: '../product/product'
-    // })
-    //关闭所有页面，打开到应用内的某个页面。
-    // wx.reLaunch({
-    //   url: '../product/product'
-    // })
-    // wx.switchTab({ 
-    //   url: '../my/my'
-    // })
-  },
   onReady: function () {
 
   },
