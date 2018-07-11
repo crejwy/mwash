@@ -15,6 +15,10 @@ Component({
     orientation: {
       type: String,
       value: 'left'//滚动方向
+    },
+    width:{
+      type:Number,
+      value:400
     }
   },
 
@@ -35,7 +39,9 @@ Component({
     // 页面显示
     var vm = this; 
     var length = vm.data.text.length * vm.data.size;//文字长度
-    var windowWidth = wx.getSystemInfoSync().windowWidth;// 屏幕宽度
+    // var windowWidth = wx.getSystemInfoSync().windowWidth;// 屏幕宽度
+    // console.log(wx.getSystemInfoSync().windowWidth)
+    var windowWidth = vm.data.width;
     vm.setData({
       _cohesion: vm.data.cohesion == "true",
       length: length,

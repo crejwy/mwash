@@ -1,10 +1,16 @@
 <view class="notice">
   <view class='notice-title'>公告：</view>
   <view class="notice-content">
-    <marquee text="这是一个走马灯显示器，，哈哈哈哈哈哈哈哈" orientation='left' ></marquee> 
+    <marquee text="这是一个走马灯显示器，，哈哈哈哈哈哈哈哈" orientation='left' width="200" ></marquee> 
+  </view>
+  <view class='notice-calandar'>
+    领馆日历
+    <picker mode="date" value="{{date}}" bindchange="bindDateChange">      
+        <i class="iconfont icon-rili"></i>
+    </picker>
   </view>
 </view>
 <view class="container">
-
+{{date}}
   {{productid}}
 </view>

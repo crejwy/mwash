@@ -1,5 +1,5 @@
 <!--components/marquee/marquee.wxml wx:if="{{_cohesion}}"  wx:else="{{_cohesion}}"-->
-<view class="example" wx:if="{{_cohesion}}">
+<view class="example" style='width:{{width*2}}rpx' wx:if="{{_cohesion}}">
   <view class="marquee_box">
     <view class="marquee_text" style="{{orientation}}:{{marqueeDistance2}}px;font-size: {{size}}px;">
       <text>{{text}}</text>
@@ -7,7 +7,7 @@
     </view>
   </view>
 </view>
-<view class="example" wx:else>
+<view class="example"  style='width:{{width*2}}rpx' wx:else>
   <view class="marquee_box">
     <view class="marquee_text" style="{{orientation}}:{{marqueeDistance}}px;font-size: {{size}}px;">
       {{text}}

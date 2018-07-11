@@ -1,4 +1,7 @@
 /**app.wxss**/
+@import "./plugins/iconfont/iconfonts.wxss";
+
+
 .container {
   height: 100%;
   display: flex;
@@ -12,3 +15,4 @@
 view{
   display: block;
 }
+

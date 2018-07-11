@@ -1,6 +1,6 @@
 .notice{
   height: 50rpx;
-  overflow: hidden;
+   /* overflow: hidden;  */
 
 }
 .notice-title{
@@ -11,8 +11,20 @@
   float: left;
 }
 .notice-content{
-  display: inline-block;
-  width: 400rpx; 
+  display: block;
+  /* width: 400rpx;  */
   height: 100%; 
-
+  float: left;
+}
+.notice-calandar {
+  display: block;
+  font-size: 14px;
+  width: 200rpx;
+  float: left;
+  margin-left: 20rpx;
+}
+.notice-calandar picker{
+  display: inline-block;
+  width: 50rpx;
+  margin-left: 10rpx;
 }
