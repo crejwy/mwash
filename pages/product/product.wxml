@@ -10,7 +10,39 @@
     </picker>
   </view>
 </view>
-<view class="container">
-{{date}}
-  {{productid}}
+
+
+<view class='placeofissue'>
+  <image class='backimg' src="{{bacimgsrc}}" mode="scaleToFill">
+  </image>
+  <view class='select_placeofissue'>
+    <picker bindchange="bindPlaceofissuePickerChange" value="{{placeofissue}}" range="{{placeofissue_range}}">
+      护照签发地：
+      <view class="picker">
+        <text>{{placeofissue_range[placeofissue]}}</text>
+         <i class="iconfont icon-xla"/> 
+      </view>
+    </picker>
+  </view>
+  
 </view>
+
+
+<block wx:for="{{searchProductsCost}}" wx:for-item="item" wx:key="id" >
+<navigator url="info?teamId={{item.team_id}}">
+  <view class="product">    
+    <view class="product_info">
+      <view class="h3 justify">{{item.name}}-{{item.location}}</view>
+      <view class="h4 justify">办理时长:{{item.timecost}}</view>
+    </view>
+    <view class="product_price">
+      {{item.price}}
+    </view>
+  </view>
+</navigator>
+</block>
+<!-- 
+<view class="container">
+  {{date}}
+  {{productid}}
+</view> -->

@@ -53,6 +53,23 @@ function getProduct(){
 }
 
 
+function searchProductsCost(productid,location){
+  var data=[{
+    price:'123元/人起',
+    name:'美国旅游签证',
+    location:'上海领区',
+    timecost:'4-5工作日',
+    id:1
+  },{
+      price: '123元/人起',
+      name: '美国旅游签证',
+      location: '上海领区',
+      timecost: '4-5工作日',
+      id: 2
+  }];
+  return data;
+}
+
 module.exports={
-  getDestinations, getProduct
+  getDestinations, getProduct, searchProductsCost
 }
