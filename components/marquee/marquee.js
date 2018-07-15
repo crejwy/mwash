@@ -33,7 +33,7 @@ Component({
     marquee2copy_status: false,
     marquee2_margin: 60,
     size: 14,    
-    interval: 20 // 时间间隔
+    interval: 200 // 时间间隔
   },
   ready: function () {
     // 页面显示

@@ -1,0 +1,83 @@
+<view class='head_detail'>
+<view class="head_name">美国签证-上海领区（）</view>
+<view class="head_price">153元/人</view>
+<navigator url="/pages/placeOrder/placeorder">
+  <i class="iconfont icon-next"/> 
+</navigator>
+</view>
+
+<view class='placeofissue'>
+  <view class='select_placeofissue'>
+      <picker bindchange="bindPlaceofissuePickerChange" value="{{placeofissue}}" range="{{placeofissue_range}}">
+        已选领区：
+        <view class="picker">
+          <text>{{placeofissue_range[placeofissue]}}</text>
+          <i class="iconfont icon-xla"/> 
+        </view>
+      </picker>
+  </view>
+  <view class="sign_rate">
+    <view>99%的出签率</view>
+    <view>{{sign_rate_stars}}</view>
+  </view>
+</view>
+
+
+<view class='btn_menu'>
+  <view class='btn_source {{btn_foucus==1?"active":""}}' data-btn='1' bindtap='changebtn'>办理资料</view>
+  <view class='btn_flow {{btn_foucus==2?"active":""}}' data-btn='2' bindtap='changebtn'>办理流程</view>
+</view>
+
+<view wx:if='{{btn_foucus==1}}'>
+  <view class="identity  {{identity_foucus==2?'active':''}}"  data-identity='2'  bindtap='changeidentity'>
+    <image class="identity_img"  mode="scaleToFill" src='http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'></image>
+    <text>在职人员</text>
+  </view>
+  <view class="identity  {{identity_foucus==3?'active':''}}" data-identity='3'  bindtap='changeidentity'>
+    <image class="identity_img"  mode="scaleToFill" src='http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'></image>
+    <text>在职人员</text>
+  </view>
+  <view class="identity  {{identity_foucus==4?'active':''}}" data-identity='4'  bindtap='changeidentity'>
+    <image class="identity_img"  mode="scaleToFill" src='http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'></image>
+    <text>在职人员</text>
+  </view>
+  <view class="identity  {{identity_foucus==5?'active':''}}" data-identity='5'  bindtap='changeidentity'>
+    <image class="identity_img"  mode="scaleToFill" src='http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'></image>
+    <text>在职人员</text>
+  </view>
+  <view class="identity  {{identity_foucus==6?'active':''}}" data-identity='6'  bindtap='changeidentity'>
+    <image class="identity_img"  mode="scaleToFill" src='http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'></image>
+    <text>在职人员</text>
+  </view>
+  <view>
+    <view class="elementsource">
+      <text>电子资料</text>
+      <view wx:for="{{elementsource}}" wx:for-item="item">
+        <view class="necessary" >
+          <text wx:if='{{item.necessary}}' >*</text>
+        </view> 
+        <text class="name">{{item.name}}</text>    
+      </view>
+    </view>
+    <view class="interviewsource">
+      <text>面试资料</text>
+      <view wx:for="{{interviewsource}}" wx:for-item="item">
+        <view class="necessary" >
+          <text wx:if='{{item.necessary}}'>*</text>
+        </view>
+        <text class="name">{{item.name}}</text>
+      </view>
+    </view>
+    <view class='footer'>
+      带*为必须资料，其他为辅助资料
+    </view>
+  </view>
+</view>
+<view wx:if='{{btn_foucus==2}}'>
+1、去哪里
+2、准备什么东西
+3、准备申请
+4、开始交钱
+5、交易成功
+</view>
+

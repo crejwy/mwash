@@ -29,7 +29,7 @@
 
 
 <block wx:for="{{searchProductsCost}}" wx:for-item="item" wx:key="id" >
-<navigator url="info?teamId={{item.team_id}}">
+<navigator url="/pages/visaDetail/visadetail?productid={{item.id}}">
   <view class="product">    
     <view class="product_info">
       <view class="h3 justify">{{item.name}}-{{item.location}}</view>

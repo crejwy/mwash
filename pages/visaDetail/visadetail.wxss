@@ -1,0 +1,112 @@
+.head_detail{
+  text-align: center;
+  background: red;
+  height: 300rpx;
+  color: white;
+}
+.head_name{
+  line-height: 100rpx
+}
+.placeofissue{
+  position: relative;
+  margin: -50rpx auto;
+  border: solid 1px gray;
+  width: 90%;
+  display: block;
+  background: white;
+  height: 100rpx;
+}
+
+.select_placeofissue{
+  display: block;
+  width: 400rpx;
+  margin-left: 20rpx;
+  /* line-height: 100rpx; */
+  margin-top: 20rpx;
+}
+
+
+.select_placeofissue .picker{
+  display: inline-block;
+  border: solid 1px gray;
+  width: 160rpx;
+  text-align: right;
+  border-radius: 10rpx;
+  cursor: pointer;
+}
+
+.sign_rate{
+  display: block;
+  width: 250rpx;
+  /* float: right; */
+  position: absolute;
+  right: 0;
+  top:0;
+  text-align: center;
+}
+.btn_menu{
+  border-bottom: solid 1rpx gray;
+  position: relative;
+  height: 130rpx;
+}
+.btn_source,.btn_flow{
+  width: 300rpx;
+  display: block;
+  /* height: 100rpx; */
+  line-height: 80rpx;
+  height: 80rpx;
+  text-align: center;
+}
+.btn_source{
+  position: absolute;
+  bottom: 0;
+}
+.btn_flow{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.btn_source.active,.btn_flow.active{
+  border-bottom: solid 2rpx red;
+}
+
+.identity{
+  width: 80rpx;
+  height: 120rpx;
+  margin: 10rpx 30rpx;
+  display: inline-block;
+  text-align: center;
+  font-size: 18rpx;
+}
+.identity.active{
+  /* border: solid 1rpx red; */
+  color: red;
+}
+.identity.active .identity_img{
+   border: solid 1rpx red; 
+}
+
+.identity_img{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx; 
+}
+
+.elementsource,.interviewsource{
+  margin: 40rpx 20rpx;
+  /* position: relative; */
+}
+.necessary{
+  width: 30rpx;
+  color: red;
+  display: inline-block;
+}
+/* .elementsource .name,.interviewsource .name{
+   left: 30rpx; 
+   position: absolute;   
+} */
+
+.footer{
+  position: fixed;
+  bottom: 0;
+}
